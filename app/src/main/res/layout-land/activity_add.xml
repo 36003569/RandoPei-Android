@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="closekeyboard"
+    tools:context=".addActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="-1dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/rando"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/RandoNameEditText"
+            android:layout_width="169dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+            android:text="@string/empty"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Button
+            android:id="@+id/Parking"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="48dp"
+            android:onClick="click_on_parking"
+            android:text="@string/parking"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RandoNameEditText" />
+
+        <Button
+            android:id="@+id/d_parcours"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="click_on_dparcours"
+            android:text="@string/d_but_parcours"
+            app:layout_constraintBottom_toBottomOf="@+id/Parking"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.48"
+            app:layout_constraintStart_toEndOf="@+id/Parking"
+            app:layout_constraintTop_toTopOf="@+id/Parking" />
+
+        <Button
+            android:id="@+id/pt_vue"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="16dp"
+            android:onClick="click_on_pointdevue"
+            android:text="@string/point_de_vue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/Parking"
+            app:layout_constraintStart_toStartOf="@+id/Parking"
+            app:layout_constraintTop_toBottomOf="@+id/Parking"
+            app:layout_constraintVertical_bias="0.100000024" />
+
+        <Button
+            android:id="@+id/f_parcours"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="16dp"
+            android:onClick="click_on_fparcours"
+            android:text="@string/fin_de_parcours"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/d_parcours"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/d_parcours"
+            app:layout_constraintTop_toBottomOf="@+id/d_parcours"
+            app:layout_constraintVertical_bias="0.100000024" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="@+id/RandoNameEditText"
+            app:layout_constraintEnd_toEndOf="@+id/d_parcours"
+            app:layout_constraintStart_toStartOf="@+id/d_parcours" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

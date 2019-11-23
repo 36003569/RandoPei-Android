@@ -19,7 +19,6 @@ public class addActivity extends AppCompatActivity implements View.OnClickListen
     Button d_parcours ;
     Intent pt_vue_A;
     Button pt_vue ;
-    Button balise ;
     Intent f_parcours_A;
     Button f_parcours;
 
@@ -59,7 +58,7 @@ public class addActivity extends AppCompatActivity implements View.OnClickListen
         parking =  findViewById(R.id.Parking);
         d_parcours = findViewById(R.id.d_parcours);
         pt_vue = findViewById(R.id.pt_vue);
-        balise = findViewById(R.id.balise);
+
         f_parcours = findViewById(R.id.f_parcours);
         parking_A = new Intent(addActivity.this, Parking.class);
         d_parcours_A = new Intent(addActivity.this, DebutParcours.class);

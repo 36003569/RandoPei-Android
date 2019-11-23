@@ -1,19 +1,45 @@
 <resources>
     <string name="app_name">RandoPei-V3</string>
+    <!-- Main activity xml string values -->
     <string name="rando_pe">Rando Pei</string>
-    <string name="recherche">recherche</string>
-    <string name="ajouter">ajouter</string>
-    <string name="option">option</string>
+    <string name="recherche">search</string>
+    <string name="ajouter">add</string>
+    <string name="option">settings</string>
+
+    <!-- add activity xml string values -->
     <string name="empty" />
     <string name="parking">parking</string>
-    <string name="d_but_parcours">début parcours</string>
-    <string name="point_de_vue">point de vue</string>
+    <string name="d_but_parcours">beginning of trail</string>
+    <string name="point_de_vue">viewpoint</string>
     <string name="balise_intersection">balise / intersection</string>
-    <string name="fin_de_parcours">fin de parcours</string>
-    <string name="save">sauvegarder</string>
-    <string name="rando">Nom de la randonnée</string>
+    <string name="fin_de_parcours">end of trail</string>
+    <string name="save">Save</string>
+    <string name="rando">Trail name</string>
+
+    <!-- manifest xml string values -->
     <string name="title_activity_parking">Map</string>
     <string name="title_activity_debut_parcours">Map</string>
     <string name="title_activity_point_de_vue">Map</string>
     <string name="title_activity_fin_parcours">Map</string>
+
+    <!-- Login et Register xml string values -->
+    <string name="titreLogin">Authentification</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="new_register_here">New? Register Here</string>
+    <string name="logout">Logout</string>
+
+
+    <!-- Register xml string values -->
+
+    <string name="alregistered">Already Registered ? Login Here</string>
+    <string name="phone">Phone</string>
+    <string name="register">Register</string>
+    <string name="full_name">Full Name</string>
+    <string name="create_new_account">Create new account</string>
+
+    <!-- Option Activity -->
+    <string name="english">English</string>
+    <string name="francais">Français</string>
 </resources>

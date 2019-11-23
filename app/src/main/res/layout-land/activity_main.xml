@@ -27,59 +27,58 @@
 
     <Button
         android:id="@+id/search"
-        android:layout_width="0dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:shadowColor="#00FFFFFF"
         android:text="@string/recherche"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titre"
-        app:layout_constraintVertical_bias="0.359" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/B_add"
-        android:layout_width="0dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:text="@string/ajouter"
+        android:layout_marginTop="16dp"
         android:onClick="goto_Add"
+        android:text="@string/ajouter"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/search"
+        app:layout_constraintStart_toStartOf="@+id/search"
         app:layout_constraintTop_toBottomOf="@+id/search"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/setting"
-        android:layout_width="0dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:onClick="goto_setting"
         android:text="@string/option"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/B_add"
+        app:layout_constraintStart_toStartOf="@+id/B_add"
         app:layout_constraintTop_toBottomOf="@+id/B_add"
-        app:layout_constraintVertical_bias="0.203" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
         android:onClick="logout"
         android:text="@string/logout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting" />
+        app:layout_constraintTop_toBottomOf="@+id/titre" />
 </androidx.constraintlayout.widget.ConstraintLayout>

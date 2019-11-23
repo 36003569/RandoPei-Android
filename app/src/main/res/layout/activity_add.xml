@@ -59,13 +59,6 @@
                 />
 
             <Button
-                android:id="@+id/balise"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/balise_intersection"
-                />
-
-            <Button
                 android:id="@+id/f_parcours"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

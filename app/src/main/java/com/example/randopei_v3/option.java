@@ -7,15 +7,29 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.util.DisplayMetrics;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-public class option extends AppCompatActivity {
+import java.util.Locale;
 
+public class option extends AppCompatActivity{
+    /**
+    // paramètre des langues
+    private Button toEnglish, toFrench, toSwahili, toLingala;
+    private static final String LOCALE_ENGLISH = "en";
+    private static final String LOCALE_FRENCH = "fr";
+    Locale myLocale;*/
+
+    //paramètre du son et Service pour le son
     ToggleButton toggle;
     private boolean toggleOnOff;
     public static final String SHARED_PREFS = "sharedPrefs";
@@ -39,6 +53,12 @@ public class option extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option);
+
+        /**es langues button
+        toEnglish = findViewById(R.id.btn_toEnglish);
+        toFrench = findViewById(R.id.btn_toFrench);
+        //toEnglish.setOnClickListener(this);
+        toFrench.setOnClickListener(this);*/
 
         Intent music = new Intent();
         music.setClass(this,MusicService.class);
@@ -66,6 +86,7 @@ public class option extends AppCompatActivity {
         });
         //loadData();
         updateViews();
+
     }
 
     @Override
@@ -112,4 +133,5 @@ public class option extends AppCompatActivity {
     public void updateViews(){
         toggle.setChecked(toggleOnOff);
     }
+
 }
