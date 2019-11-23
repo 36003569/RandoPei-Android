@@ -6,9 +6,12 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Build;
@@ -33,6 +36,11 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class DebutParcours extends FragmentActivity implements OnMapReadyCallback {
+
+    //Shaker utilisation d'un capteur
+    private SensorManager sensorManager;
+    private ShakeEventListener shakeEventListener;
+    String toastshake;
 
     //---paramètres constantes pour la map ---
     private final static long REFRESH_FASTER = 100;
@@ -63,6 +71,7 @@ public class DebutParcours extends FragmentActivity implements OnMapReadyCallbac
     double longitude;
     public static final String DBTPARCOURS_LAT = "debutparcours_lat";
     public static final String DBTPARCOURS_LON = "debutparcours_lon";
+
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -109,6 +118,17 @@ public class DebutParcours extends FragmentActivity implements OnMapReadyCallbac
 
         // -------------------------------------------
 
+        //Shake Sensor
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        shakeEventListener = new ShakeEventListener();
+        shakeEventListener.setOnShakeListener(new ShakeEventListener.OnShakeListener() {
+            public void onShake() {
+                toastshake ="Ne vous perdez pas voici votre position: Longitude: "+gLocation.getLatitude()+" , Latitude: "+ gLocation.getLongitude();
+                Toast.makeText(DebutParcours.this,toastshake , Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         //--- PHOTO CODE ---
         mImageView = findViewById(R.id.image_view);
@@ -140,6 +160,7 @@ public class DebutParcours extends FragmentActivity implements OnMapReadyCallbac
         });
         //---------------------------------------------
     }
+
 
     //---- Mettre un marker sur la map en fonction de notre position ---
     public void updateMark(Location location){
@@ -185,7 +206,8 @@ public class DebutParcours extends FragmentActivity implements OnMapReadyCallbac
         }else{
             startLocationUpdates();
         }
-        // ------------------------------------------
+        // -----------------------------------------
+        sensorManager.registerListener(shakeEventListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_UI);
     }
 
     private void startLocationUpdates(){
@@ -196,6 +218,7 @@ public class DebutParcours extends FragmentActivity implements OnMapReadyCallbac
     protected void onPause(){
         super.onPause();
         stopLocationUpdates();
+        sensorManager.unregisterListener(shakeEventListener);
     }
 
     private void stopLocationUpdates(){

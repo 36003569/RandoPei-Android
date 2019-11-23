@@ -9,6 +9,8 @@ import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.hardware.SensorListener;
+import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -85,7 +87,7 @@ public class option extends AppCompatActivity{
             }
         });
         //loadData();
-        updateViews();
+        //updateViews();
 
     }
 
