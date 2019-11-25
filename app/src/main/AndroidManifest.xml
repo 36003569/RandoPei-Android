@@ -52,15 +52,16 @@
             android:name=".Parking"
             android:label="@string/title_activity_parking" />
         <activity android:name=".Register" />
-        <activity android:name=".Login" />
-        <activity android:name=".addActivity" />
-        <activity android:name=".option" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".addActivity" />
+        <activity android:name=".option" />
+        <activity android:name=".MainActivity">
         </activity>
     </application>
 
